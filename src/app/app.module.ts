@@ -11,6 +11,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CarouselComponent} from './page1/Carousel/carousel.component';
 import {PopOverComponent} from './page1/PopOver/PopOver.component';
+import {AccordionComponent} from './page1/Accordion/accordion.component';
+import {AccordionModule} from 'ng-uikit-pro-standard';
+
 
 
 
@@ -21,7 +24,8 @@ import {PopOverComponent} from './page1/PopOver/PopOver.component';
     FooterComponent,
     Page1Component,
     CarouselComponent,
-    PopOverComponent
+    PopOverComponent,
+    AccordionComponent
 
 
 
@@ -33,7 +37,9 @@ import {PopOverComponent} from './page1/PopOver/PopOver.component';
     BrowserAnimationsModule,
     CarouselModule,
     CollapseModule,
-    WavesModule
+    WavesModule,
+    AccordionModule,
+
 
   ],
   providers: [],

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component {
-
+  today: number = Date.now();
 }
