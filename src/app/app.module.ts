@@ -19,11 +19,14 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
+import { Page3Component } from './page3/page3.component';
+import { StadiumpageComponent } from './stadiumpage/stadiumpage.component';
 
 
 const routes = [
   { path: '', component: MainpageComponent },
-  { path: 'about', component: AboutpageComponent }
+  { path: 'about', component: AboutpageComponent },
+  { path: 'stadium', component: StadiumpageComponent },
 
 ]
 
@@ -42,6 +45,8 @@ const routes = [
     MainpageComponent,
     AboutpageComponent,
     LayoutComponent,
+    Page3Component,
+    StadiumpageComponent,
 
 
 
