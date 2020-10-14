@@ -1,6 +1,7 @@
 
-<main>
 
+
+<main>
 
   <div id="infoBoxabout" class="infoBoxContainer animatedParent" data-appear-top-offset='-300'>
     <div class="animated fadeInUp delay-150">
@@ -20,7 +21,7 @@
         {{today  |  date:'mediumDate'}}
       </div>
       <div class="infoBoxButtonContainer">
-        <a class="btn-1" href="emblem.html">More...</a>
+        <a class="btn-1" routerLink="/about">{{'More...' | lowercase}}</a>
 
       </div>
     </div>
@@ -47,7 +48,7 @@
         </p>{{today  |  date:'mediumDate'}}
       </div>
       <div class="infoBoxButtonContainer">
-        <a class="btn-1" href="emblem.html">More...</a>
+        <a class="btn-1" href="emblem.html">{{'More...' | lowercase}}</a>
 
       </div>
     </div>

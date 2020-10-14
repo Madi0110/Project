@@ -7,14 +7,11 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'Liverpool';
-
-
-
-  displayChild: boolean=false;
-  toggle() { this.displayChild=!this.displayChild; }
-
-  ngOnInit(): void {
+  ngOnInit() {​​​​
+  console.log("Header is loading!");
   }
+
+
 
 }
 

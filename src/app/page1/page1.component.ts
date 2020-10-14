@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 
 @Component({
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './page1.component.html',
   styleUrls: ['./page1.component.css']
 })
-export class Page1Component {
+export class Page1Component implements  OnInit{
   today: number = Date.now();
+  @Input() item: string;
+  ngOnInit(): void {
+  }
 }

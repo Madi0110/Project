@@ -11,9 +11,21 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CarouselComponent} from './page1/Carousel/carousel.component';
 import {PopOverComponent} from './page1/PopOver/PopOver.component';
-import {AccordionComponent} from './page1/Accordion/accordion.component';
+import {AccordionComponent} from './page2/Accordion/accordion.component';
 import {AccordionModule} from 'ng-uikit-pro-standard';
+import { Page2Component } from './page2/page2.component';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
+import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import { LayoutComponent } from './layout/layout.component';
 
+
+const routes = [
+  { path: '', component: MainpageComponent },
+  { path: 'about', component: AboutpageComponent }
+
+]
 
 
 
@@ -25,7 +37,11 @@ import {AccordionModule} from 'ng-uikit-pro-standard';
     Page1Component,
     CarouselComponent,
     PopOverComponent,
-    AccordionComponent
+    AccordionComponent,
+    Page2Component,
+    MainpageComponent,
+    AboutpageComponent,
+    LayoutComponent,
 
 
 
@@ -39,6 +55,8 @@ import {AccordionModule} from 'ng-uikit-pro-standard';
     CollapseModule,
     WavesModule,
     AccordionModule,
+    RouterModule.forRoot(routes),
+    FormsModule
 
 
   ],

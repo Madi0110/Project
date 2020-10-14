@@ -1,7 +1,15 @@
-<button type="button" mdbBtn color="danger" class="waves-light"
-        mdbPopover="The main purpose of this website is to show the Liverpool team. You can find information about them."
+<br>
+<h5>Your favourite player of Liverpool :</h5> <input [(ngModel)] ='name'  #newTask>
+
+
+<button (click)='buttonClicked()' type="button" mdbBtn color="danger" class="waves-light"
+        mdbPopover="The main purpose of this website is to show the Liverpool team."
         placement="right"
-        mdbPopoverHeader="Dismissible popover"
+        mdbPopoverHeader="Purpose"
         triggers="focus" mdbWavesEffect>
- Purpose
+ Submit
 </button>
+<br>
+His Name is :  {{name}}
+<br>
+<p> Button Clicked {{count}} Times </p>
