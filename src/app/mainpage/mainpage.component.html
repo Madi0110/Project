@@ -1,8 +1,12 @@
   <router-outlet></router-outlet>
   <app-carousel>ngAfterViewInit()</app-carousel>
-  <app-popover></app-popover>
+  <app-popover (newTaskEvent)="addTask($event)"></app-popover>
 
+  <ul class="list-group list-group-horizontal" style="margin: 50px auto; width: 50%; padding: 10px;">
+    <app-comp *ngFor="let item of items" [item]="item"></app-comp>
+  </ul>
   <app-page1></app-page1>
+
   <app-footer></app-footer>
 
 

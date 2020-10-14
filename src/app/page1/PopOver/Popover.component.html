@@ -1,15 +1,16 @@
+<div class="mid">
 <br>
-<h5>Your favourite player of Liverpool :</h5> <input [(ngModel)] ='name'  #newTask>
-
-
-<button (click)='buttonClicked()' type="button" mdbBtn color="danger" class="waves-light"
+<h5>Your favourite player of Liverpool :</h5>
+  <form class="form-inline" >
+    <input  [(ngModel)] ='name' #newTask>
+  </form>
+<button (click) = 'addNewTask(newTask.value)' type="button" mdbBtn color="danger" class="waves-light"
         mdbPopover="The main purpose of this website is to show the Liverpool team."
         placement="right"
         mdbPopoverHeader="Purpose"
         triggers="focus" mdbWavesEffect>
  Submit
 </button>
-<br>
-His Name is :  {{name}}
-<br>
-<p> Button Clicked {{count}} Times </p>
+  <p> Button Clicked {{count}} Times </p>
+</div>
+

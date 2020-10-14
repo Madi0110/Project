@@ -21,6 +21,8 @@ import {FormsModule} from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
 import { Page3Component } from './page3/page3.component';
 import { StadiumpageComponent } from './stadiumpage/stadiumpage.component';
+import { MapComponent } from './page3/map/map.component';
+import { CompComponent } from './page1/comp/comp.component';
 
 
 const routes = [
@@ -47,6 +49,8 @@ const routes = [
     LayoutComponent,
     Page3Component,
     StadiumpageComponent,
+    MapComponent,
+    CompComponent,
 
 
 

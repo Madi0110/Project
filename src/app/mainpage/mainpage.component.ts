@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainpageComponent implements OnInit {
 
-
-
-  ngOnInit(): void {
+  items = ['Salah'];
+  addTask(newTask:string){
+    this.items.push(newTask);
+  }
+  ngOnInit(): void{
   }
 
 }

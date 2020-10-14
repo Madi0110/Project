@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {style} from '@angular/animations';
 
 @Component({
@@ -14,9 +14,11 @@ export class PopOverComponent implements AfterViewInit{
   name: string;
 
   count: number=0;
-  buttonClicked() : void {
+  @Output() newTaskEvent = new EventEmitter<string>();
+  addNewTask(value: string){
+    this.newTaskEvent.emit(value);
+    alert(value + "is added to your list");
     this.count=this.count+1;
     console.log("Button Clicked")
   }
-
 }
