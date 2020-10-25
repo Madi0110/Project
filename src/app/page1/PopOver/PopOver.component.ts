@@ -1,5 +1,8 @@
 import {AfterViewInit, Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {style} from '@angular/animations';
+import {logger} from 'codelyzer/util/logger';
+import {Page1Component} from '../page1.component';
+import {LogService} from '../log,service';
 
 @Component({
   selector: 'app-popover',
@@ -12,6 +15,8 @@ export class PopOverComponent implements AfterViewInit{
   console.log("Carousel started");
   }
   name: string;
+  constructor(private logger: LogService) {
+  }
 
   count: number=0;
   @Output() newTaskEvent = new EventEmitter<string>();
@@ -19,6 +24,9 @@ export class PopOverComponent implements AfterViewInit{
     this.newTaskEvent.emit(value);
     alert(value + "is added to your list");
     this.count=this.count+1;
-    console.log("Button Clicked")
+    console.log("Button Clicked");
+
+    this.logger.log("Test the `log()` Method");
   }
 }
+

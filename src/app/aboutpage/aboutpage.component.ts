@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoggService} from '../page2/log.service';
 
 @Component({
   selector: 'app-aboutpage',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutpageComponent implements OnInit {
 
-
-
-  displayChild: boolean=false;
-  toggle() { this.displayChild=!this.displayChild; }
-
-  ngOnInit(): void {
+  constructor(private logger: LoggService) {
   }
 
 
+  displayChild: boolean=false;
+  toggle() {
+    this.displayChild=!this.displayChild;
+    this.logger.log("Test the `log()` Method");
+  }
+
+  ngOnInit(): void {
+  }
 }

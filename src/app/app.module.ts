@@ -18,11 +18,13 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import { LayoutComponent } from './layout/layout.component';
 import { Page3Component } from './page3/page3.component';
 import { StadiumpageComponent } from './stadiumpage/stadiumpage.component';
 import { MapComponent } from './page3/map/map.component';
 import { CompComponent } from './page1/comp/comp.component';
+import {ServiceService} from './page2/service.service';
+import {LogService} from './page1/log,service';
+import {LoggService} from './page2/log.service';
 
 
 const routes = [
@@ -46,7 +48,6 @@ const routes = [
     Page2Component,
     MainpageComponent,
     AboutpageComponent,
-    LayoutComponent,
     Page3Component,
     StadiumpageComponent,
     MapComponent,
@@ -69,7 +70,7 @@ const routes = [
 
 
   ],
-  providers: [],
+  providers: [LogService, ServiceService, LoggService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

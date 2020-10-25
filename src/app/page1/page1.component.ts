@@ -11,4 +11,5 @@ export class Page1Component implements  OnInit{
   @Input() item: string;
   ngOnInit(): void {
   }
+
 }
