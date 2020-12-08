@@ -25,14 +25,16 @@ import { CompComponent } from './page1/comp/comp.component';
 import {ServiceService} from './page2/service.service';
 import {LogService} from './page1/log,service';
 import {LoggService} from './page2/log.service';
+import {AboutGuard} from './aboutpage/about.guard';
+import {ExitAboutGuard} from './exit.about.guard';
 
 
 const routes = [
-  { path: '', component: MainpageComponent },
-  { path: 'about', component: AboutpageComponent },
+  { path: '', component: MainpageComponent,   },
+  { path: 'about', component: AboutpageComponent, canActivate: [AboutGuard] },
   { path: 'stadium', component: StadiumpageComponent },
 
-]
+];
 
 
 
@@ -70,7 +72,7 @@ const routes = [
 
 
   ],
-  providers: [LogService, ServiceService, LoggService],
+  providers: [LogService, ServiceService, LoggService,AboutGuard,ExitAboutGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
