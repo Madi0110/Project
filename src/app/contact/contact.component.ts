@@ -10,6 +10,15 @@ import {Observable} from 'rxjs';
 })
 export class ContactComponent implements OnInit,ComponentCanDeactivate {
 
+
+  registerForm = new FormGroup({
+    firstName: new FormControl(),
+    txtEmail: new FormControl(),
+    txtPhone: new FormControl(),
+    txtMsg: new FormControl()
+  });
+
+
   saved: boolean = false;
   save(){
     this.saved = true;
@@ -24,6 +33,9 @@ export class ContactComponent implements OnInit,ComponentCanDeactivate {
     }
   }
 
+  onSubmit(){
+    console.log(this.registerForm.value);
+  }
   constructor() { }
 
   ngOnInit(): void {
