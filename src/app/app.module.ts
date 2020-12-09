@@ -17,7 +17,7 @@ import { Page2Component } from './page2/page2.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Page3Component } from './page3/page3.component';
 import { StadiumpageComponent } from './stadiumpage/stadiumpage.component';
 import { MapComponent } from './page3/map/map.component';
@@ -27,12 +27,14 @@ import {LogService} from './page1/log,service';
 import {LoggService} from './page2/log.service';
 import {AboutGuard} from './aboutpage/about.guard';
 import {ExitAboutGuard} from './exit.about.guard';
+import { ContactComponent } from './contact/contact.component';
 
 
 const routes = [
   { path: '', component: MainpageComponent,   },
   { path: 'about', component: AboutpageComponent, canActivate: [AboutGuard] },
   { path: 'stadium', component: StadiumpageComponent },
+  { path: 'contact', component: ContactComponent, canDeactivate: [ExitAboutGuard]}
 
 ];
 
@@ -54,6 +56,7 @@ const routes = [
     StadiumpageComponent,
     MapComponent,
     CompComponent,
+    ContactComponent,
 
 
 
@@ -68,7 +71,8 @@ const routes = [
     WavesModule,
     AccordionModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
 
   ],
