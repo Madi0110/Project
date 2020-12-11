@@ -26,7 +26,7 @@ export class ContactComponent implements OnInit,ComponentCanDeactivate {
   canDeactivate() : boolean | Observable<boolean>{
 
     if(!this.saved){
-      return confirm("Are you want to leave this page?");
+      return confirm(" Your message wasn't saved, are you want to leave this page?");
     }
     else{
       return true;

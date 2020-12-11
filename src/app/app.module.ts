@@ -72,7 +72,8 @@ const routes = [
     AccordionModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
 
 
   ],

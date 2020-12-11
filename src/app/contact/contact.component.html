@@ -7,40 +7,61 @@
   <div class="contact-image">
     <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
   </div>
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+  <form (ngSubmit)="onSubmit()" #registerForm = "ngForm" >
     <h3>Drop Us a Message</h3>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
           <label for="firstName" >
             Name</label>
-          <input type="text" name="Name" class="form-control" placeholder="Your Name *" formControlName="firstName" value="" />
+          <input type="text" name="Name"  class="form-control" required  #firstName = "ngModel" [(ngModel)] = "registerForm.firstName"   placeholder="Your Name *" value="" />
+
+          <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+               class="alert alert-danger">
+            <div *ngIf="firstName.errors.required">
+              Name is required.
+            </div>
+          </div>
+
         </div>
 
         <div class="form-group">
           <label for="txtEmail" >
             Email</label>
-          <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" formControlName="txtEmail" value="" />
+          <input type="text" name="txtEmail" class="form-control" email  #txtEmail = "ngModel" [(ngModel)] = "registerForm.txtEmail" placeholder="Your Email *" value="" />
+
+          <div *ngIf="txtEmail.invalid && (txtEmail.dirty || txtEmail.touched)"
+               class="alert alert-danger">
+            <div *ngIf="txtEmail.errors.required">
+              Email is required.
+            </div>
+          </div>
+
         </div>
+
         <div class="form-group">
-          <label for="txtPhone" >
-            Phone</label>
-          <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" formControlName="txtPhone" value="" />
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary"    (click)="save()">Submit</button>
+          <button class="btn btn-primary"   (click)="save()">Save</button>
           <br>
-          <a routerLink="">To Home Page</a>
-        </div>
+
+          <button class="btn btn-primary"  routerLink="/">Send</button>        </div>
 
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label for="txtMsg">
             Message</label>
-          <textarea name="txtMsg" class="form-control" placeholder="Your Message *" formControlName="txtMsg" style="width: 100%; height: 150px;"></textarea>
+          <textarea name="txtMsg" class="form-control" placeholder="Your Message *" required  #txtMsg = "ngModel" [(ngModel)] = "registerForm.txtMsg" style="width: 100%; height: 150px;"></textarea>
+
+          <div *ngIf="txtMsg.invalid && (txtMsg.dirty || txtMsg.touched)"
+               class="alert alert-danger">
+            <div *ngIf="firstName.errors.required">
+              Message is required.
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
   </form>
 </div>
