@@ -28,13 +28,16 @@ import {LoggService} from './page2/log.service';
 import {AboutGuard} from './aboutpage/about.guard';
 import {ExitAboutGuard} from './exit.about.guard';
 import { ContactComponent } from './contact/contact.component';
+import {ModuleModule} from './module/module.module';
+import {ModuleRoutingModule} from './module/module-routing.module';
+
 
 
 const routes = [
   { path: '', component: MainpageComponent,   },
   { path: 'about', component: AboutpageComponent, canActivate: [AboutGuard] },
-  { path: 'stadium', component: StadiumpageComponent },
-  { path: 'contact', component: ContactComponent, canDeactivate: [ExitAboutGuard]}
+  { path: 'contact', component: ContactComponent, canDeactivate: [ExitAboutGuard]},
+
 
 ];
 
@@ -52,11 +55,9 @@ const routes = [
     Page2Component,
     MainpageComponent,
     AboutpageComponent,
-    Page3Component,
-    StadiumpageComponent,
-    MapComponent,
     CompComponent,
     ContactComponent,
+
 
 
 
@@ -73,6 +74,8 @@ const routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
+    ModuleModule,
+    ModuleRoutingModule
 
 
 

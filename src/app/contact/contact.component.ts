@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {ComponentCanDeactivate} from '../exit.about.guard';
 import {Observable} from 'rxjs';
+import {ComponentCanDeactivate} from '../exit.about.guard';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +14,6 @@ export class ContactComponent implements OnInit,ComponentCanDeactivate {
   registerForm = new FormGroup({
     firstName: new FormControl(),
     txtEmail: new FormControl(),
-    txtPhone: new FormControl(),
     txtMsg: new FormControl()
   });
 

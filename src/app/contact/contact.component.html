@@ -14,7 +14,7 @@
         <div class="form-group">
           <label for="firstName" >
             Name</label>
-          <input type="text" name="Name"  class="form-control" required  #firstName = "ngModel" [(ngModel)] = "registerForm.firstName"   placeholder="Your Name *" value="" />
+          <input type="text" name="Name"   class="form-control" required  #firstName = "ngModel" [(ngModel)] = "registerForm.firstName"     placeholder="Your Name *" value="" />
 
           <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
                class="alert alert-danger">
