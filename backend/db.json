@@ -1,0 +1,28 @@
+{
+  "player": [
+    {
+      "id": 1,
+      "name": "Salah",
+      "email": "Mohamed",
+      "phone": "RW"
+    },
+    {
+      "name": "Sadio",
+      "email": "Mane",
+      "phone": "LW",
+      "id": 2
+    },
+    {
+      "name": "Roberto",
+      "email": "Firmino",
+      "phone": "ST",
+      "id": 3
+    },
+    {
+      "name": "Virgil",
+      "email": "Van Dijk",
+      "phone": "CB",
+      "id": 4
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CarouselModule,CollapseModule, WavesModule } from 'angular-bootstrap-md';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRouting } from './app-routing';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -30,6 +30,11 @@ import {ExitAboutGuard} from './exit.about.guard';
 import { ContactComponent } from './contact/contact.component';
 import {ModuleModule} from './module/module.module';
 import {ModuleRoutingModule} from './module/module-routing.module';
+import { PlayersListComponent } from './players/players-list/players-list.component';
+import { PlayersEditComponent } from './players/players-edit/players-edit.component';
+import { PlayersCreateComponent } from './players/players-create/players-create.component';
+import { PlayersComponent } from './players/players.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -37,6 +42,7 @@ const routes = [
   { path: '', component: MainpageComponent,   },
   { path: 'about', component: AboutpageComponent, canActivate: [AboutGuard] },
   { path: 'contact', component: ContactComponent, canDeactivate: [ExitAboutGuard]},
+  { path: 'players', component: PlayersComponent },
 
 
 ];
@@ -57,6 +63,11 @@ const routes = [
     AboutpageComponent,
     CompComponent,
     ContactComponent,
+    PlayersListComponent,
+    PlayersEditComponent,
+    PlayersCreateComponent,
+    PlayersComponent,
+
 
 
 
@@ -64,7 +75,7 @@ const routes = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRouting,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
     CarouselModule,
@@ -75,7 +86,8 @@ const routes = [
     FormsModule,
     ReactiveFormsModule,
     ModuleModule,
-    ModuleRoutingModule
+    ModuleRoutingModule,
+    HttpClientModule,
 
 
 

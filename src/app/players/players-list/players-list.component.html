@@ -1,0 +1,41 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no employee -->
+  <div class="no-data text-center" *ngIf="Player.length == 0">
+    <p>There is no employee added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-employee">Add Player</button>
+  </div>
+
+  <!-- Employees list table, it hides when there is no employee -->
+  <div *ngIf="Player.length !== 0">
+    <h3 class="mb-3 text-center">Player List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Position</th>
+          <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let Player of Player">
+          <td>{{Player.id}}</td>
+          <td>{{Player.name}}</td>
+          <td>{{Player.email}}</td>
+          <td>{{Player.phone}}</td>
+          <td>
+            <button class="btn btn-success" routerLink="/player-edit/{{Player.id}}">Edit  </button>
+            <button class="btn btn-danger" (click)="deletePlayer(Player.id)">   Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
